@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
                     R.string.correct_toast,
                     Toast.LENGTH_SHORT
                 ).show()
+                checkAnswer(true)
             }
         }
 
@@ -52,6 +53,7 @@ class MainActivity : AppCompatActivity() {
                     R.string.incorrect_toast,
                     Toast.LENGTH_SHORT
                 ).show()
+                checkAnswer(false)
             }
 
             binding.nextButton.setOnClickListener {
