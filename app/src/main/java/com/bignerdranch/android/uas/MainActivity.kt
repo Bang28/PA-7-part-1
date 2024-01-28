@@ -95,6 +95,9 @@ class MainActivity : AppCompatActivity() {
                 cheatLauncher.launch(intent)
             }
 
+            updateQuestion()
+            blurCheatButton()
+
         }
 
     }
