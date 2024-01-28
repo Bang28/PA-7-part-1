@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.Toast
 import com.bignerdranch.android.uas.databinding.ActivityMainBinding
 
+private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
 
