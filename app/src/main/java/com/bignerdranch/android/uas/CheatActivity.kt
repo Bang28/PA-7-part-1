@@ -1,5 +1,7 @@
 package com.bignerdranch.android.uas
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bignerdranch.android.uas.databinding.ActivityCheatBinding
@@ -15,5 +17,14 @@ class CheatActivity : AppCompatActivity() {
         setContentView(R.layout.activity_cheat)
         binding = ActivityCheatBinding.inflate(layoutInflater)
         setContentView(binding.root)
+    }
+
+    companion object {
+        fun newIntent(packageContext: Context, answerIsTrue: Boolean): Intent
+        {
+            return Intent(packageContext, CheatActivity::class.java).apply {
+                putExtra(EXTRA_ANSWER_IS_TRUE, answerIsTrue)
+            }
+        }
     }
 }
