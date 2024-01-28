@@ -2,6 +2,9 @@ package com.bignerdranch.android.uas
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.RenderEffect
+import android.graphics.Shader
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +12,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
+import androidx.annotation.RequiresApi
 import com.bignerdranch.android.uas.databinding.ActivityMainBinding
 
 private const val TAG = "MainActivity"
@@ -132,6 +136,7 @@ class MainActivity : AppCompatActivity() {
             .show()
     }
 
+    @RequiresApi(Build.VERSION_CODES.S)
     private fun blurCheatButton() {
         val effect = RenderEffect.createBlurEffect(
             10.0f,
