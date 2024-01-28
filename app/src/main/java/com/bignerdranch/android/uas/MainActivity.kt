@@ -2,6 +2,8 @@ package com.bignerdranch.android.uas
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.Toast
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,10 +20,20 @@ class MainActivity : AppCompatActivity() {
 
         trueButton.setOnClickListener {
             // Do something in response to the click here
+            Toast.makeText(
+                this,
+                R.string.correct_toast,
+                Toast.LENGTH_SHORT
+            ).show()
         }
 
         falseButton.setOnClickListener {
             // Do something in response to the click here
+            Toast.makeText(
+                this,
+                R.string.incorrect_toast,
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 }
