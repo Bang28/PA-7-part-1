@@ -34,21 +34,25 @@ class MainActivity : AppCompatActivity() {
         falseButton = findViewById(R.id.false_button)
 
         trueButton.setOnClickListener {
-            // Do something in response to the click here
-            Toast.makeText(
-                this,
-                R.string.correct_toast,
-                Toast.LENGTH_SHORT
-            ).show()
+            binding.trueButton.setOnClickListener {
+                // Do something in response to the click here
+                Toast.makeText(
+                    this,
+                    R.string.correct_toast,
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
 
         falseButton.setOnClickListener {
-            // Do something in response to the click here
-            Toast.makeText(
-                this,
-                R.string.incorrect_toast,
-                Toast.LENGTH_SHORT
-            ).show()
+            binding.falseButton.setOnClickListener {
+                // Do something in response to the click here
+                Toast.makeText(
+                    this,
+                    R.string.incorrect_toast,
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
     }
 }
