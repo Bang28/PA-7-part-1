@@ -6,7 +6,9 @@ import androidx.lifecycle.ViewModel
 
 private const val TAG = "QuizViewModel"
 
-class QuizViewModel : ViewModel() {
+const val IS_CHEATER_KEY = "IS_CHEATER_KEY"
+
+class QuizViewModel (private val savedStateHandle: SavedStateHandle) : ViewModel() {
     init {
         Log.d(TAG, "ViewModel instance created")
     }
@@ -23,7 +25,13 @@ class QuizViewModel : ViewModel() {
         Question(R.string.question_americas, true),
         Question(R.string.question_asia, true))
 
-    private var currentIndex: Int = 0
+    var isCheater: Boolean
+        get() = savedStateHandle.get(IS_CHEATER_KEY) ?: false
+        set(value) = savedStateHandle.set(IS_CHEATER_KEY, value)
+
+    private var currentIndex: Int
+        get() = savedStateHandle.get(IS_CHEATER_KEY) ?: 0
+        set(value) = savedStateHandle.set(IS_CHEATER_KEY, value)
 
     val currentQuestionAnswer: Boolean
         get() = questionBank[currentIndex].answer
