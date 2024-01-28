@@ -1,9 +1,11 @@
 package com.bignerdranch.android.uas
 
 import android.util.Log
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 
 private const val TAG = "QuizViewModel"
+
 class QuizViewModel : ViewModel() {
     init {
         Log.d(TAG, "ViewModel instance created")
@@ -21,7 +23,7 @@ class QuizViewModel : ViewModel() {
         Question(R.string.question_americas, true),
         Question(R.string.question_asia, true))
 
-    private var currentIndex = 0
+    private var currentIndex: Int = 0
 
     val currentQuestionAnswer: Boolean
         get() = questionBank[currentIndex].answer
